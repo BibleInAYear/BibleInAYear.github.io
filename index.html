@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="printDates.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Bible In A Year</title>
+    <!--Google Font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito" rel="stylesheet">
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<script>
+    function pic(){//Function to rotate from random images on refresh
+        var bgm=['bt.webp','bs.jpg','ba.jpg','mm.jpg','wc.jpg'];
+        $('body').css({
+            'background-image' :'url(' + bgm[Math.floor(Math.random() * bgm.length)] + ')',
+        });
+    }
+    $(document).ready(function(){
+        pic();
+    })
+</script>
+<h1>Bible In A Year</h1>
+<br/><br/><br/><br/>
+<input type="date" id="start_date">
+<br/><br/><br/><br/>
+<button onclick="printDates()">Submit </button>
+<div id ="output"></div>
+</body>
+</html>

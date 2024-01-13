@@ -1,0 +1,66 @@
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position: center center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: center;
+    min-height:100vh;
+}
+input[type="date"]{
+    padding: 15px;
+    font-family:  "Gabarito";
+    outline: none;
+    font-size: 25px;
+    color: black;
+    border: solid black 1px;
+    background-color: transparent;
+    border-radius: 5px;
+    font-weight: 700;
+}
+::-webkit-calendar-picker-indicator{
+    background-color: transparent;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+h1{
+    color: black;
+    font-size: 100px;
+    text-align: center;
+}
+button:hover{
+    font-family:  "Gabarito";
+    background-color: transparent;
+    text-decoration: underline black;
+    border:none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 700;
+    cursor: pointer;
+}
+button{
+    font-family:  "Gabarito";
+    background-color: transparent;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 700;
+}
+body { font-family: "Gabarito";}
+p { font-family: "Gabarito";}
