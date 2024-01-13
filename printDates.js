@@ -747,7 +747,13 @@ function printDates(){ // Function to output Table with Dates and Verse Referenc
 
     for (var i = 0; i < 365; i++) {
         var bgColor = i % 2 === 0 ? '#b3d9ff' : '#80bfff';
-        table += "<tr style='background-color: " + bgColor + ";'><td style='padding: 10px; border: 1px solid black;'>" +"<a href="+link_arr[i]+" target='_blank'>"+verses[i]+"</a>" + "</td><td style='padding: 10px; border: 1px solid black;'>" + days[i] + "</td></tr>";
+        if (!end_date){
+            table += "<tr style='background-color: " + bgColor + ";'><td style='padding: 10px; border: 1px solid black;'>" +"<a href="+link_arr[i]+" target='_blank'>"+verses[i]+"</a>" + "</td><td style='padding: 10px; border: 1px solid black;'>" + 'Day ' +parseInt(i+1) + "</td></tr>";
+
+        } else{
+            table += "<tr style='background-color: " + bgColor + ";'><td style='padding: 10px; border: 1px solid black;'>" +"<a href="+link_arr[i]+" target='_blank'>"+verses[i]+"</a>" + "</td><td style='padding: 10px; border: 1px solid black;'>" + days[i] + "</td></tr>";
+
+        }
     }
 
     table += "</table>"
