@@ -743,21 +743,17 @@ function printDates(){ // Function to output Table with Dates and Verse Referenc
     }
     
     var table = "<table style='width: 80%; margin: 20px auto; border-collapse: collapse;font-family: Gabarito, sans-serif;'>"
-    table += "<tr style='background-color: #ffffff;'><th style='padding: 10px; border: 1px solid black; '>Bible Reference</th><th style='padding: 10px; border: 1px solid black;'>Date</th></tr>";
+    table += "<tr style='background-color: transparent;'><th style='padding: 10px; border: 1px solid black; '>Bible Reference</th><th style='padding: 10px; border: 1px solid black;'>Date</th></tr>";
 
     for (var i = 0; i < 365; i++) {
-        var bgColor = i % 2 === 0 ? '#b3d9ff' : '#80bfff';
-        if (!end_date){
-            table += "<tr style='background-color: " + bgColor + ";'><td style='padding: 10px; border: 1px solid black;'>" +"<a href="+link_arr[i]+" target='_blank'>"+verses[i]+"</a>" + "</td><td style='padding: 10px; border: 1px solid black;'>" + 'Day ' +parseInt(i+1) + "</td></tr>";
-
-        } else{
-            table += "<tr style='background-color: " + bgColor + ";'><td style='padding: 10px; border: 1px solid black;'>" +"<a href="+link_arr[i]+" target='_blank'>"+verses[i]+"</a>" + "</td><td style='padding: 10px; border: 1px solid black;'>" + days[i] + "</td></tr>";
-
+            table += "<tr style='background-color: transparent" + ";'><td style='padding: 10px; border: 1px solid black;'>" +"<a href="+link_arr[i]+" target='_blank'>"+verses[i]+"</a>" + "</td><td style='padding: 10px; border: 1px solid black;'>" + (!end_date ? 'Day ' +parseInt(i+1):days[i]) + "</td></tr>";
         }
-    }
+
 
     table += "</table>"
 
     // var newWindow = window.open('','_blank');
     document.write("<html><head><title>Bible Reading Plan</title><link href='https://fonts.googleapis.com/css2?family=Gabarito:wght@400;700&display=swap' rel='stylesheet'></head><body>" + table + "</body></html>");
+    document.body.style.background = 'linear-gradient(to right,#99ccff, #66ccff)';
+    document.body.style.color = 'black';
 }
