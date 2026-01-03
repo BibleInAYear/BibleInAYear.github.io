@@ -14,22 +14,49 @@
     <link rel="icon" href="favicon.ico">
 </head>
 <body>
-<script>
-    function pic(){//Function to rotate from random images on refresh
-        var bgm=['bt.webp','bs.jpg','ba.jpg','mm.jpg','wc.jpg'];
-        $('body').css({
-            'background-image' :'url(' + bgm[Math.floor(Math.random() * bgm.length)] + ')',
-        });
-    }
-    $(document).ready(function(){
-        pic();
-    })
-</script>
-<h1>Bible In A Year</h1>
-<br/><br/><br/><br/>
-<input type="date" id="start_date">
-<br/><br/><br/><br/>
-<button onclick="printDates()">Submit </button>
-<div id ="output"></div>
+    <!-- Video Background -->
+    <video class="video-background" autoplay muted loop playsinline>
+        <source src="https://cdn.pixabay.com/video/2023/04/19/159627-819346937_large.mp4" type="video/mp4">
+        <!-- Fallback to another nature video if the first doesn't load -->
+        <source src="https://cdn.pixabay.com/video/2020/05/11/38095-419186286_large.mp4" type="video/mp4">
+    </video>
+    
+    <!-- Overlay for better text readability -->
+    <div class="video-overlay"></div>
+    
+    <!-- Main Content -->
+    <main class="landing-container" id="setup-section">
+        <h1 class="main-title">Bible in a Year</h1>
+        
+        <div class="input-container">
+            <input 
+                type="date" 
+                id="start_date" 
+                class="date-picker"
+                aria-label="Select starting date"
+            >
+            <button id="generate-btn" class="submit-btn">
+                Start Journey
+            </button>
+        </div>
+    </main>
+
+    <!-- Reading Plan Section (Hidden by default) -->
+    <section class="plan-section" id="plan-section" style="display: none;">
+        <div class="plan-container">
+            <div class="plan-header">
+                <h2 class="plan-title">Your Reading Plan</h2>
+                <button id="reset-btn" class="back-btn">← Back</button>
+            </div>
+            <div class="controls">
+                <button id="print-btn" class="control-btn">Print Plan</button>
+                <button id="clear-progress-btn" class="control-btn">Clear Progress</button>
+            </div>
+            <div id="output" class="reading-plan-output"></div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="printDates.js"></script>
 </body>
 </html>
